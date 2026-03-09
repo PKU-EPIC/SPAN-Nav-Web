@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SPAN-Nav project page: Generalized Spatial Awareness for Versatile Vision-Language Navigation.">
+  <title>SPAN-Nav | Project Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <h1>SPAN-Nav: Generalized Spatial Awareness for Versatile Vision-Language Navigation</h1>
+      <div class="authors">
+        <span><a href="https://2003jiahang.github.io/" class="author-link">Jiahang Liu</a><sup>1,2,*</sup></span>
+        <span><a href="https://github.com/Tranxray" class="author-link">Tianyu Xu</a><sup>1,2,*</sup></span>
+        <span><a href="https://github.com/187370" class="author-link">Jiawei Chen</a><sup>1,2,*</sup></span>
+        <span><a href="#" class="author-link">Lu Yue</a><sup>1,2,*</sup></span>
+        <span><a href="https://jzhzhang.github.io/" class="author-link">Jiazhao Zhang</a><sup>1,2,*</sup></span>
+        <span><a href="https://github.com/Yeah2333/" class="author-link">Zhiyong Wang</a><sup>2,*</sup></span>
+        <span><a href="https://github.com/lpercc" class="author-link">Minghan Li</a><sup>2</sup></span>
+        <span><a href="https://zhaoqisheng123.github.io" class="author-link">Qisheng Zhao</a><sup>1,2</sup></span>
+        <span><a href="https://aq-li.github.io/" class="author-link">Anqi Li</a><sup>1</sup></span>
+        <span><a href="https://github.com/QiSu77" class="author-link">Qi Su</a><sup>1,2</sup></span>
+        <span><a href="https://scholar.google.com/citations?user=X7M0I8kAAAAJ&hl=zh-CN" class="author-link">Zhizheng Zhang</a><sup>2,3,&dagger;</sup></span>
+        <span><a href="https://hughw19.github.io/" class="author-link">He Wang</a><sup>1,2,3,&dagger;</sup></span>
+      </div>
+      <p class="author-notes"><sup>*</sup> Equal Contribution, <sup>&dagger;</sup> Equal Advising</p>
+      <p class="affiliation"><sup>1</sup>Peking University &nbsp; <sup>2</sup>Galbot &nbsp; <sup>3</sup>BAAI</p>
+      <div class="actions">
+        <a class="btn" href="paper.pdf" target="_blank" rel="noopener">Paper</a>
+        <a class="btn" href="#videos">Videos</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container section reveal">
+      <img src="images/teasor.png" alt="SPAN-Nav teaser figure" class="feature-image">
+    </section>
+
+    <section class="container section reveal" id="abstract">
+      <h2>Abstract</h2>
+      <p>
+        Recent embodied navigation approaches leveraging Vision-Language Models (VLMs) demonstrate strong generalization in
+        versatile Vision-Language Navigation (VLN). However, reliable path planning in complex environments remains challenging
+        due to insufficient spatial awareness. In this work, we introduce SPAN-Nav, an end-to-end foundation model designed to
+        infuse embodied navigation with universal 3D spatial awareness using RGB video streams. SPAN-Nav extracts spatial priors
+        across diverse scenes through an occupancy prediction task on extensive indoor and outdoor environments. To mitigate the
+        computational burden, we introduce a compact representation for spatial priors, finding that a single token is sufficient
+        to encapsulate the coarse-grained cues essential for navigation tasks. Furthermore, inspired by the Chain-of-Thought (CoT)
+        mechanism, SPAN-Nav utilizes this single spatial token to explicitly inject spatial cues into action reasoning through an
+        end-to-end framework. Leveraging multi-task co-training, SPAN-Nav captures task-adaptive cues from generalized spatial priors,
+        enabling robust spatial awareness to generalize even to the task lacking explicit spatial supervision. To support comprehensive
+        spatial learning, we present a massive dataset of 4.2 million occupancy annotations that covers both indoor and outdoor scenes
+        across multi-type navigation tasks. SPAN-Nav achieves state-of-the-art performance across three benchmarks spanning diverse
+        scenarios and varied navigation tasks. Finally, real-world experiments validate the robust generalization and practical
+        reliability of our approach across complex physical scenarios.
+      </p>
+    </section>
+
+    <section class="container section reveal" id="summary-video">
+      <h2>Summary Video</h2>
+      <p class="subtext">Project summary video.</p>
+      <div class="video-placeholder">
+        <a class="youtube-link-card" href="https://www.youtube.com/watch?v=7DguO8e_uTw" target="_blank" rel="noopener">
+          <img src="https://i.ytimg.com/vi/7DguO8e_uTw/maxresdefault.jpg" alt="SPAN-Nav summary video thumbnail">
+          <span>Watch On YouTube</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="container section reveal">
+      <h2>Highlights</h2>
+      <div class="grid four">
+        <article class="card">
+          <h3>Universal 3D Awareness</h3>
+          <p>Injects explicit spatial priors into action reasoning from RGB-only observations.</p>
+          <img src="images/cube.png" alt="" class="card-icon">
+        </article>
+        <article class="card">
+          <h3>Compact Spatial Token</h3>
+          <p>Single-token representation preserves key geometry cues while keeping inference efficient.</p>
+          <img src="images/st.png" alt="" class="card-icon">
+        </article>
+        <article class="card">
+          <h3>Large-Scale Data</h3>
+          <p>4.2M occupancy annotations from diverse indoor/outdoor and multi-task navigation sources.</p>
+          <img src="images/dataset_.png" alt="" class="card-icon">
+        </article>
+        <article class="card">
+          <h3>SOTA Performance</h3>
+          <p>+5.3% SR on VLN-RxR, 4× lower cumulative cost on MetaUrban, +30.9% SR on InternScenes.</p>
+          <img src="images/perfomance.png" alt="" class="card-icon">
+        </article>
+      </div>
+    </section>
+
+    <section class="container section reveal" id="method">
+      <h2>Method Overview</h2>
+      <p class="subtext">
+        SPAN-Nav extends a VLM backbone with occupancy-aligned latent learning and spatial chain-of-thought action planning.
+      </p>
+      <img src="images/method.png" alt="Method overview of SPAN-Nav" class="feature-image">
+      <div class="grid two">
+        <article class="card">
+          <h3>Stage I: Teacher-Forcing Spatial Learning</h3>
+          <p>Train with occupancy, latent, and trajectory supervision using ground-truth occupancy tokens.</p>
+        </article>
+        <article class="card">
+          <h3>Stage II: Student-Forcing Transfer</h3>
+          <p>Switch to self-predicted spatial tokens to close the gap between training and deployment.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section reveal" id="spatial-learning">
+      <h2>Spatial Learning: Dataset and Objectives</h2>
+      <p class="subtext">
+        We jointly present the cross-scene occupancy dataset and the corresponding optimization objectives. The dataset spans VLN,
+        PointGoal, and Urban Navigation across indoor/outdoor and simulation/real-world scenes; the training objective combines
+        occupancy reconstruction, latent consistency, action supervision, and QA losses in a unified co-training pipeline.
+      </p>
+      <div class="grid two figure-pair">
+        <div class="figure-frame">
+          <img src="images/dataset.png" alt="Dataset overview" class="feature-image compact-figure equalized-figure">
+        </div>
+        <div class="figure-frame">
+          <img src="images/loss.png" alt="Training objectives and losses" class="feature-image compact-figure equalized-figure">
+        </div>
+      </div>
+    </section>
+
+    <section class="container section reveal" id="videos">
+      <h2>Video Demonstrations</h2>
+      <div class="task-block video-card vln-task">
+        <h3>Vision-and-Language Navigation</h3>
+        <div class="carousel" data-carousel>
+          <button class="carousel-btn prev" type="button" aria-label="Previous videos">&#8249;</button>
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <div class="video-item">
+                <video controls playsinline preload="metadata" data-instruction="Go along the hallway on the right and move forward. Pass the counter on your right, then continue forward and pass the yellow sign. Move to the end of the hallway and turn left. Pass the glass room and turn left again. Move forward and enter the door, then move forward and turn left. Proceed to the elevator and stop." src="videos/vln_long.mp4"></video>
+              </div>
+              <div class="video-item">
+                <video controls playsinline preload="metadata" data-instruction="Move forward until you see the plant. Then turn left and continue turning left until you see the white room. Turn left and go forward until the glass double doors are on your right. Turn right, move through the double doors, move the counter, and stop." src="videos/vln_star.mp4"></video>
+              </div>
+              <div class="video-item">
+                <video controls playsinline preload="metadata" data-instruction="Move forward until you see an open glass door. Turn left and go through the door, then move into the room and stop in front of the black chair." src="videos/vln_lidar_close.mp4"></video>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-btn next" type="button" aria-label="Next videos">&#8250;</button>
+        </div>
+      </div>
+
+      <div class="task-block video-card">
+        <h3>PointGoal Navigation</h3>
+        <div class="video-row">
+          <div class="video-item">
+            <video controls playsinline preload="metadata" data-instruction="Go to the position of '6, 0'." src="videos/pointgoal_1.mp4"></video>
+          </div>
+          <div class="video-item">
+            <video controls playsinline preload="metadata" data-instruction="Go to the position of '6.5, -3'." src="videos/pointgoal_2.mp4"></video>
+          </div>
+        </div>
+      </div>
+
+      <div class="task-block video-card">
+        <h3>Urban Navigation</h3>
+        <div class="video-row">
+          <div class="video-item">
+            <video controls playsinline preload="metadata" src="videos/urbanvla_1.mp4"></video>
+          </div>
+          <div class="video-item">
+            <video controls playsinline preload="metadata" src="videos/urbanvla_2.mp4"></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section reveal" id="citation">
+      <h2>BibTeX</h2>
+      <pre class="bibtex"><code> add bibtex
+  </code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>SPAN-Nav Project Page</p>
+      <p><a href="#abstract">Back to top sections</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
